@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить книгу</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+<body>
+    <h1>Добавить книгу</h1>
+    <form method="POST">        
+        <label>Название</label><br>
+        <input name="title" class="field" /><br><br>
+
+        <label>Автор</label><br>
+        <input name="author" class="field" /><br><br>
+        
+        <label>Жанр</label><br>
+        <input name="genre" class="field" /><br><br>
+
+        <label>Дата публикации</label><br>
+        <input name="publicationDate" type="number" class="field" min="100" max="2025" /><br><br>
+        
+        <label>Оценка</label><br>
+        <input name="rating" type="number" min="1" max="10" step="1" class="field" /><br><br>
+
+        <input type="submit" value="Сохранить" />
+    </form>
+    <br>
+    <a href="/">На главную</a>
+</body>
+<html>

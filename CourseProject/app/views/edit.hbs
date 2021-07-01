@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Изменить данные</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+<body>
+    <h1>Изменить данные</h1>
+    <form action="/edit" method="POST">
+        <input type="hidden" name="id" value="{{books.id}}" />
+        
+        <label>Название</label><br>
+        <input name="title" class="field" value="{{books.title}}" /><br><br>
+
+        <label>Автор</label><br>
+        <input name="author" class="field" value="{{books.author}}" /><br><br>
+        
+        <label>Жанр</label><br>
+        <input name="genre" class="field" value="{{books.genre}}" /><br><br>
+
+        <label>Дата публикации</label><br>
+        <input name="publicationDate" type="number" class="field" min="100" max="2025" value="{{books.publicationDate}}" /><br><br>
+
+        <label>Оценка</label><br>
+        <input name="rating" type="number" class="field" min="1" max="10" step="1" value="{{books.rating}}" /><br><br>
+        
+        <input type="submit" value="Сохранить" />
+    </form>
+    <br>
+    <a href="/">На главную</a>
+</body>
+<html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список книг</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+    <center>
+    <h3>Список прочитанных книг</h3>
+    <br>
+    <a href="/create" class="btn">Добавить книгу</a>
+    <a href="/recover" class="btn">Восстановить список</a>
+    <a href="/clear" class="btn">Очистить список</a>
+    <table>
+        <tr>
+            <th>Редактор</th>
+            <th>Название</th>
+            <th>Автор&nbsp;<a href="/sort/author.ASC">▲</a><a href="/sort/author.DESC">▼</a></th>
+            <th>Жанр</th>
+            <th>Дата публикации&nbsp;<a href="/sort/publicationDate.ASC">▲</a><a href="/sort/publicationDate.DESC">▼</a></th>
+            <th>Оценка&nbsp;<a href="/sort/rating.ASC">▲</a><a href="/sort/rating.DESC">▼</a></th>
+        </tr>
+        {{#each books}}
+            <tr>
+                <td width=180 class="editor">
+                    <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить" />
+                    </form>
+                    <form action="/delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+                <td>{{this.title}}</td>
+                <td>{{this.author}}</td>
+                <td>{{this.genre}}</td>
+                <td>{{this.publicationDate}}</td>
+                <td>{{this.rating}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    </center>
+</body>
+<html>
